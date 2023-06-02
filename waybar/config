@@ -1,0 +1,98 @@
+{
+    "height": 23, // Waybar height (to be removed for auto height)
+    "margin-top": 0,
+    "margin-left": 9,
+    "margin-bottom": 0,
+    "margin-right": 9,
+    "position": "top",
+    "layer": "top",
+    "spacing": 13, 
+    "modules-left": ["clock","wlr/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio","backlight","cpu","memory","battery","tray"],
+    "wlr/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "urgent": "",
+        "active": "",
+        "default": ""
+      },
+      "sort-by-number": true
+    },
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "tray": {
+        "spacing": 15
+    },
+    "clock": {
+        "format-alt": "{:%A,%B %d,%I:%M %p}",
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "cpu": {
+      "interval": 10,
+      "format": "CPU: {}%",
+      "max-length": 10,
+      "on-click": "",
+    },
+    "memory": {
+        "interval": 10,
+        "format": "RAM: {used:0.1f}G",
+        "max-length": 10,
+        "on-click": "xfce4-terminal -x htop",
+    },
+    "backlight": {
+        "device": "DP-1",
+        "format": "{icon}   {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-click": "",
+    },
+    "network": {
+        "format-wifi": "直   {bandwidthTotalBytes}",
+        "format-ethernet": " wired",
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "  {volume}%",
+        "format-muted": "婢",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+      "bat": "BATT",
+      "adapter": "ACAD",
+      "interval": 30,
+      "states": {
+          "warning": 30,
+      },
+      "max-length": 40,
+      "format": "BAT: {capacity}%",
+      "format-charging": "Charging: {capacity}%",
+      "format-plugged": "Plugged: {capacity}%",
+      "format-icons": [" ", " ", " ", " ", " "],
+    },
+    "hyprland/window": {
+        "format": "{}",
+
+    },
+}
+
