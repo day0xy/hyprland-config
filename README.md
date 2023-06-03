@@ -6,12 +6,6 @@
 
 
 
-[TOC]
-
-
-
-
-
 ## 网站推荐
 
 | https://wiki.hyprland.org/                             | 官方wiki                            |
@@ -21,8 +15,6 @@
 | https://github.com/hyprwm/hyprland-wiki/commits/main   | commit历史，看看更新了什么          |
 | https://github.com/hyprwm/hyprland-wiki/commits/main   | wiki commit历史，看看wiki更新了什么 |
 | https://wiki.hyprland.org/FAQ/                         | 官方FAQ                             |
-|                                                        |                                     |
-|                                                        |                                     |
 
 
 
