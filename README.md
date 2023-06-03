@@ -8,8 +8,9 @@
 
 ## 网站推荐
 
-| https://wiki.hyprland.org/                             | 官方wiki                            |
+| website                                                | comment                             |
 | ------------------------------------------------------ | ----------------------------------- |
+| https://wiki.hyprland.org/                             | 官方wiki                            |
 | https://github.com/hyprland-community/awesome-hyprland | hyprland list                       |
 | https://arewewaylandyet.com/                           | wayland软件参考                     |
 | https://github.com/hyprwm/hyprland-wiki/commits/main   | commit历史，看看更新了什么          |
