@@ -1,8 +1,12 @@
 
 
-我的hyprland笔记，包含一些解决方案和踩坑记录/My hyprland notes, including some solutions and pitfall records
+我的hyprland笔记，包含一些安装，配置的一些解决方案和踩坑记录/My hyprland notes, including some solutions and pitfall records
 
 
+
+
+
+[TOC]
 
 
 
