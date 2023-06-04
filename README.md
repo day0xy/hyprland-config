@@ -4,6 +4,8 @@
 
 
 
+![](screenshots.png)
+
 
 
 ## 网站推荐
@@ -61,7 +63,7 @@ bind = SUPER, S, exec, killall rofi || rofi -show window  -theme Arc-Dark -font 
 yay -S swaync-git
 ```
 
-### bar
+### waybar
 
 ```
 yay -S waybar-hyprland-git
@@ -69,19 +71,19 @@ yay -S waybar-hyprland-git
 
 可能还需要装nerd 系列的字体
 
+![](waybar.png)
+
 ### 壁纸管理
 
 ```
 yay -S hyprpaper-gi
 ```
 
-### 剪贴板管理
+### 剪贴板管理📋
 
 ```
 cliphist wl-clipboard
 ```
-
-
 
 
 
@@ -95,7 +97,7 @@ bind = SUPER, C, exec, cliphist list | rofi -dmenu -theme Arc-Dark -font "Serif 
 bind = SUPER SHIFT, C, exec,rm ~/.cache/cliphist/db
 ```
 
-
+绑了一个快捷键，super+shift+c就是清除剪贴板记录
 
 ### 屏幕亮度管理
 
