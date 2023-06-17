@@ -4,7 +4,7 @@
 
 
 
-![](screenshots.png)
+![](./screenshots.png)
 
 
 
