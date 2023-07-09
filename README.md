@@ -15,7 +15,7 @@
 | https://wiki.hyprland.org/                             | 官方wiki                            |
 | https://github.com/hyprland-community/awesome-hyprland | hyprland list                       |
 | https://arewewaylandyet.com/                           | wayland软件参考                     |
-| https://github.com/hyprwm/hyprland-wiki/commits/main   | commit历史，看看更新了什么          |
+| https://github.com/hyprwm/Hyprland/commits/main        | commit历史，看看更新了什么          |
 | https://github.com/hyprwm/hyprland-wiki/commits/main   | wiki commit历史，看看wiki更新了什么 |
 | https://wiki.hyprland.org/FAQ/                         | 官方FAQ                             |
 
