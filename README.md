@@ -76,7 +76,7 @@ yay -S waybar-hyprland-git
 ### 壁纸管理
 
 ```
-yay -S hyprpaper-gi
+yay -S hyprpaper-git
 ```
 
 ### 剪贴板管理📋
