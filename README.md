@@ -613,7 +613,7 @@ bind = , XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
 bind = , XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
 ```
 
-###阻止swayidle在播放音频时的行为
+### 阻止swayidle在播放音频时的行为
 安装
 ```
 sway-audio-idle-inhibit-git
