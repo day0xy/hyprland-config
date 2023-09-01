@@ -619,3 +619,10 @@ bind = , XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
 sway-audio-idle-inhibit-git
 ```
 在hyprland配置里加一个exec-once
+
+### 在当前工作区使用`alt+tab`切换窗口
+hyprland.conf添加
+```
+bind = ALT, Tab, cyclenext,
+bind = ALT, Tab, bringactivetotop,
+```
