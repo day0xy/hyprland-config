@@ -620,7 +620,7 @@ sway-audio-idle-inhibit-git
 ```
 在hyprland配置里加一个exec-once
 
-### 在当前工作区使用`alt+tab`切换窗口
+### 在当前工作区使用`alt+tab`切换窗口(float模式)
 hyprland.conf添加
 ```
 bind = ALT, Tab, cyclenext,
