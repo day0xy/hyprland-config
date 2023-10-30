@@ -1,16 +1,18 @@
 {
-    "height": 23, // Waybar height (to be removed for auto height)
     "margin-top": 0,
-    "margin-left": 9,
+    "margin-left": 10,
+    "margin-right": 10,
     "margin-bottom": 0,
-    "margin-right": 9,
-    "position": "top",
-    "layer": "top",
-    "spacing": 13, 
-    "modules-left": ["clock","wlr/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio","backlight","cpu","memory","battery","tray"],
-    "wlr/workspaces": {
+    "spacing": 22, 
+    "layer": "top", 
+    "position": "top", 
+    "height": 32, 
+
+    "modules-left": ["clock","hyprland/window"],
+    "modules-center": ["hyprland/workspaces","wlr/taskbar"],
+    "modules-right": ["custom/media","pulseaudio","backlight","battery", "tray" ],
+
+    "hyprland/workspaces": {
       "format": "{icon}",
       "on-click": "activate",
       "format-icons": {
@@ -28,71 +30,95 @@
         "active": "",
         "default": ""
       },
-      "sort-by-number": true
-    },
-    "hyprland/window": {
-        "format": "{}"
-    },
-    "tray": {
-        "spacing": 15
-    },
-    "clock": {
-        "format-alt": "{:%A,%B %d,%I:%M %p}",
-        "format": "{:%I:%M %p}",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+      "sort-by-number": true,
+      "on-scroll-up": "hyprctl dispatch workspace e-1",
+      "on-scroll-down": "hyprctl dispatch workspace e+1"
     },
 
+
+    "hyprland/window": {
+        "max-length": 40,
+
+    },
+
+    "tray": {
+        "icon-size": 22,
+        "spacing": 12,
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+    "pulseaudio": {
+        "format": "{icon}   {volume}%",
+        "format-bluetooth": "    {volume}%",
+        "format-bluetooth-muted": " ",
+        "format-muted": "婢 ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    },
     "cpu": {
       "interval": 10,
-      "format": "CPU: {}%",
-      "max-length": 10,
-      "on-click": "",
+      "format": "CPU:  {}%",
+      "max-length": 50,
+      "on-click": "kitty htop",
     },
     "memory": {
         "interval": 10,
-        "format": "RAM: {used:0.1f}G",
-        "max-length": 10,
-        "on-click": "xfce4-terminal -x htop",
+        "format": "RAM:  {used:0.1f}G",
+        "max-length": 50,
+        "on-click": "kitty htop",
     },
-    "backlight": {
-        "device": "DP-1",
-        "format": "{icon}   {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-click": "",
-    },
-    "network": {
-        "format-wifi": "直   {bandwidthTotalBytes}",
-        "format-ethernet": " wired",
-    },
-
-    "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "  {volume}%",
-        "format-muted": "婢",
-        "format-icons": {
-            "headphone": " ",
-            "hands-free": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "battery": {
+     "battery": {
       "bat": "BATT",
       "adapter": "ACAD",
-      "interval": 30,
+      "interval": 60,
       "states": {
           "warning": 30,
+          "critical": 15
       },
-      "max-length": 40,
-      "format": "BAT: {capacity}%",
-      "format-charging": "Charging: {capacity}%",
-      "format-plugged": "Plugged: {capacity}%",
+      "max-length": 20,
+      "format": "{icon}    {capacity}%",
+      "format-warning": "{icon} {capacity}%",
+      "format-critical": "{icon} {capacity}%",
+      "format-charging": "<span font-family='Font Awesome 6 Free'></span>   {capacity}%",
+      "format-plugged": "    {capacity}%",
+      "format-full": "    {capacity}%",
       "format-icons": [" ", " ", " ", " ", " "],
     },
-    "hyprland/window": {
-        "format": "{}",
-
+        "backlight": {
+        "device": "eDP-1",
+        "format": "{icon}   {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
     },
-}
 
+    "custom/media": {
+    "exec": "/usr/bin/python  $HOME/.config/waybar/mediaplayer.py 2> /dev/null", 
+    "format": " {} ",
+    "max-length": 40,
+    "escape": true,
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    },
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 25,
+    "spacing": 3,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+	},
+
+}

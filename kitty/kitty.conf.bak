@@ -1,0 +1,30 @@
+font_family Jetbrains Mono
+font_size   19
+
+disable_ligatures always
+enable_audio_bell no
+visual_bell_duration 0.0
+
+
+scrollback_lines        100000
+
+
+close_on_child_death    yes
+strip_trailing_spaces   always
+
+
+
+cursor_shape            block
+cursor_stop_blinking_after 5.0
+shell_integration  no-cursor
+
+
+detect_urls yes
+copy_on_select yes
+background_opacity 0.5
+
+
+# BEGIN_KITTY_THEME
+# GitHub Dark
+include current-theme.conf
+# END_KITTY_THEME

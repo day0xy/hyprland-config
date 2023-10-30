@@ -5,7 +5,7 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword animations:enabled 0;\
         keyword decoration:drop_shadow 0;\
         keyword decoration:blur 0;\
-        keyword misc:vfr 1;\
+        keyword misc:vfr 0;\
         keyword misc:animate_manual_resizes 0;\
         "
     exit

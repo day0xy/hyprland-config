@@ -1,10 +1,51 @@
 
+# 2023.10.30 正式退坑Hyprland
+ 回去用kde了
+
+
+
+更新了我最后的配置文件，截图如下
+
+
+
+主题需要nwg-look和qt5ct以及qt6ct来配置，qt5ct需要设置一个环境变量.<br>
+
+屏幕缩放用的100%，因为我是放大字体来解决的。可以在hyprland.conf里配置屏幕缩放
+
+
+其他配置什么的，可以去看reddit的unixporn频道。
+
+话说回来，使用wm,提升效率才是王道。可能有的人需要一个解决方案去提高生产效率，而不是花时间在折腾美化上。
+
+wm现在和我的需求不符了，所以我就换回de了。
+
+再见了hyprland,再见了平铺，动态wm.
+
+
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+
+
+
+
+
+
+
+
+
+
+
 
 我的hyprland笔记，包含一些安装，配置的一些解决方案和踩坑记录/My hyprland notes, including some solutions and pitfall records
 
 
 
-![](./screenshots.png)
+![](./screenshot.png)
 
 
 
@@ -32,7 +73,7 @@
 ### 安装hyprland
 
 ```
-yay -S hyprland-git  wlroots/wlroots-git   xdg-desktop-portal-hyprland-git 
+yay -S hyprland-git  wlroots/wlroots-git   xdg-desktop-portal-hyprland-git
 ```
 
 或者,下面这个包带hidpi补丁
