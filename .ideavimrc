@@ -1,0 +1,5 @@
+set keep-english-in-normal
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+set sneak
