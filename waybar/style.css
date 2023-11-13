@@ -1,43 +1,54 @@
 * {
-  border-radius: 11px;
-  font-family: Noto Serif Bold;
+  border-radius: 15px;
+  font-family: Noto Sans Bold;
   font-size: 18px;
-  min-height: 0;
-}
-
-window#waybar {
-  /* background: transparent; */
-  color: white;
 }
 
 #window {
-  font-family: "Noto Serif Bold";
+  font-family: "Noto Sans Bold";
   padding-left: 20px;
   font-weight: bold;
 }
 
-
-
 #clock,
-#tray
-#custom-media
-
-
-#clock {
+#tray #custom-media #clock {
   font-weight: bold;
   padding-left: 10px;
 }
 
-#tray{
+#tray {
   padding-right: 10px;
 }
 
-
-#custom-media{
+#custom-media {
   font-weight: bold;
   padding-right: 20px;
-
 }
 
+#workspaces {
+  font-family: "Noto Serif Bold";
+  font-weight: bold;
+  padding-right: 20px;
+}
+#workspaces button {
+  padding-right: 10px;
+  padding-left: 10px;
+}
 
-
+#workspaces button.active {
+  background-color: rgb(181, 232, 224);
+  color: rgb(26, 24, 38);
+  border: none;
+  border-radius: 0;
+}
+#workspaces button.urgent {
+  color: rgb(26, 0, 0);
+  border: none;
+  border-radius: 0;
+}
+#workspaces button:hover {
+  background-color: rgb(248, 189, 150);
+  color: rgb(26, 24, 38);
+  border: none;
+  border-radius: 0;
+}

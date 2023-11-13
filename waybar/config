@@ -1,124 +1,115 @@
 {
-    "margin-top": 0,
-    "margin-left": 10,
-    "margin-right": 10,
-    "margin-bottom": 0,
-    "spacing": 22, 
-    "layer": "top", 
-    "position": "top", 
-    "height": 32, 
+  "margin-top": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bottom": 0,
+  "spacing": 22, 
+  "layer": "top", 
+  "position": "top", 
+  "height": 40,
 
-    "modules-left": ["clock","hyprland/window"],
-    "modules-center": ["hyprland/workspaces","wlr/taskbar"],
-    "modules-right": ["custom/media","pulseaudio","backlight","battery", "tray" ],
+  "modules-left": ["clock","hyprland/window"],
+  "modules-center": ["hyprland/workspaces","wlr/taskbar"],
+  "modules-right": ["custom/media","pulseaudio","backlight","battery", "tray" ],
 
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "on-click": "activate",
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1"
+  },
+  "hyprland/window": {
+      "max-length": 40,
+  },
+  "tray": {
+      "icon-size": 22,
+      "spacing": 12,
+  },
+  "clock": {
+      "format": "{:%I:%M %p}",
+      "format-alt": "{:%B %d, %Y}",
+      "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "pulseaudio": {
+      "format": "{icon}   {volume}%",
+      "format-bluetooth": "    {volume}%",
+      "format-bluetooth-muted": " ",
+      "format-muted": "婢 ",
       "format-icons": {
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5",
-        "6": "6",
-        "7": "7",
-        "8": "8",
-        "9": "9",
-        "10": "10",
-        "urgent": "",
-        "active": "",
-        "default": ""
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
       },
-      "sort-by-number": true,
-      "on-scroll-up": "hyprctl dispatch workspace e-1",
-      "on-scroll-down": "hyprctl dispatch workspace e+1"
-    },
-
-
-    "hyprland/window": {
-        "max-length": 40,
-
-    },
-
-    "tray": {
-        "icon-size": 22,
-        "spacing": 12,
-    },
-    "clock": {
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%I:%M %p}",
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
-    },
-    "pulseaudio": {
-        "format": "{icon}   {volume}%",
-        "format-bluetooth": "    {volume}%",
-        "format-bluetooth-muted": " ",
-        "format-muted": "婢 ",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
-    },
-    "cpu": {
+      "on-click": "pavucontrol",
+      "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+      "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "CPU:  {}%",
+    "max-length": 50,
+    "on-click": "kitty htop",
+  },
+  "memory": {
       "interval": 10,
-      "format": "CPU:  {}%",
+      "format": "RAM:  {used:0.1f}G",
       "max-length": 50,
       "on-click": "kitty htop",
+  },
+   "battery": {
+    "bat": "BATT",
+    "adapter": "ACAD",
+    "interval": 60,
+    "states": {
+        "warning": 30,
+        "critical": 15
     },
-    "memory": {
-        "interval": 10,
-        "format": "RAM:  {used:0.1f}G",
-        "max-length": 50,
-        "on-click": "kitty htop",
-    },
-     "battery": {
-      "bat": "BATT",
-      "adapter": "ACAD",
-      "interval": 60,
-      "states": {
-          "warning": 30,
-          "critical": 15
-      },
-      "max-length": 20,
-      "format": "{icon}    {capacity}%",
-      "format-warning": "{icon} {capacity}%",
-      "format-critical": "{icon} {capacity}%",
-      "format-charging": "<span font-family='Font Awesome 6 Free'></span>   {capacity}%",
-      "format-plugged": "    {capacity}%",
-      "format-full": "    {capacity}%",
-      "format-icons": [" ", " ", " ", " ", " "],
-    },
-        "backlight": {
-        "device": "eDP-1",
-        "format": "{icon}   {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
-    },
+    "max-length": 20,
+    "format": "{icon}    {capacity}%",
+    "format-warning": "{icon} {capacity}%",
+    "format-critical": "{icon} {capacity}%",
+    "format-charging": "<span font-family='Font Awesome 6 Free'></span>   {capacity}%",
+    "format-plugged": "    {capacity}%",
+    "format-full": "    {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+  },
+      "backlight": {
+      "device": "eDP-1",
+      "format": "{icon}   {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""],
+  },
 
-    "custom/media": {
-    "exec": "/usr/bin/python  $HOME/.config/waybar/mediaplayer.py 2> /dev/null", 
-    "format": " {} ",
-    "max-length": 40,
-    "escape": true,
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl previous",
-    "on-scroll-down": "playerctl next",
-    },
-	"wlr/taskbar": {
-		"format": "{icon}",
-		"icon-size": 25,
-    "spacing": 3,
-		"tooltip-format": "{title}",
-		"on-click": "activate",
-	},
 
+
+
+
+  "custom/media": {
+  "exec": "/usr/bin/python  $HOME/.config/waybar/mediaplayer.py 2> /dev/null", 
+  "format": " {} ",
+  "max-length": 40,
+  "escape": true,
+  "return-type": "json",
+  "on-click": "playerctl play-pause",
+  "on-scroll-up": "playerctl previous",
+  "on-scroll-down": "playerctl next",
+  },
+  "wlr/taskbar": {
+  "format": "{icon}",
+  "icon-size": 25,
+  "spacing": 3,
+  "tooltip-format": "{title}",
+  "on-click": "activate",
+  },
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "",
+          "deactivated": ""
+      }
+  },
 }
